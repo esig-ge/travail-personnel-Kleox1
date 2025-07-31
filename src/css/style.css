@@ -1,0 +1,104 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+    background-color:#fff;
+    border-radius: 10px;
+    
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+
+
+.nav {
+    background-color:coral;
+    border-radius: 5px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    
+}
+
+.nav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-size: 20px;
+    color:floralwhite;
+}
+
+.nav a:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+
+/* Listes */
+
+.container ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0;
+    list-style-type: none;
+}
+
+.container ul li {
+    margin-bottom: 10px;
+}
+
+.container ul li a:hover {
+    color: coral;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px 0;
+}
+
+ul li a {
+    color: coral;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    color: black;
+
+}
+
+/* Tableau */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color:#f2f2f2;
+    box-shadow: 0 0 8px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 12px;
+    text-align: center;
+}
