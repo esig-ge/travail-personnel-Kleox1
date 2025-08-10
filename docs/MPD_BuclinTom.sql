@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS note (
     niveau_satisfaction VARCHAR(255) NOT NULL,
     id_etudiant INT NOT NULL,
     id_matiere INT NOT NULL,
+    statut BOOLEAN NOT NULL DEFAULT TRUE,
     PRIMARY KEY (id_note),
     FOREIGN KEY (id_etudiant) REFERENCES etudiant(id_etudiant),
     FOREIGN KEY (id_matiere) REFERENCES matiere(id_matiere)
