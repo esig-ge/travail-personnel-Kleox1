@@ -3,6 +3,8 @@
 session_start();
 require_once __DIR__ . '/config/databaseconnect.php';
 
+$_erreur = '';
+
 if (!empty($_POST['username']) && !empty($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -10,9 +12,21 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     $stmt = $mysqlClient->prepare('SELECT * FROM utilisateur WHERE login = :login');
     $stmt->execute(['login' => $username]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-}
 
-/* TO DO */
+    if ($user && password_verify($password, $user['mot_de_passe'])){
+        // Connexion réussie
+            // clé primaire : id_utilisateur
+        $_SESSION['utilisateur_id'] = $user['id_utilisateur'];
+        $_SESSION['login'] = $user['login'];
+
+        
+        // Redirection ver la page d'accueil
+        header('Location: index.php');
+        exit;
+    } else {
+        $_erreur = "Nom d'utilisateur ou mot de passe incorrect.";
+    }
+}
 
 ?>
 
@@ -29,13 +43,19 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
         <form method="post" action="login.php">
             <h1> Login</h1>
 
+            <?php 
+                if (!empty($_erreur)){
+                    echo "<p>" .  htmlspecialchars($_erreur) . "</p>";
+                }
+            ?>
+
             <div>
-                <label name="username">Username : </label>
+                <label for="username">Username : </label>
                 <input type="text" name="username" required>
             </div>
 
             <div> 
-                <label name="password">Password : </label>
+                <label for="password">Password : </label>
                 <input type="password" name="password" required>
             </div>
 
