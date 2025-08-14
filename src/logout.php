@@ -1,5 +1,7 @@
 <?php
 
+// Déconnexion
+
 // Démarrage de la session
 session_start();
 
