@@ -1,19 +1,47 @@
+/* Structure principale */
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
+body, html {
+    font-family: Arial, sans-serif; /* Police d'écriture*/
+    background-color: #f9f9f9; /* Couleur de fond */
+    margin: auto; /* Marge extérieur (Centrage) */
 }
 
+header {
+    margin-bottom: 20px; /* Bas de marge */
+}
+
+main {
+    width: 100%; /* Largeur complète */
+}
+
+footer {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #333;
+    color: #f9f9f9;
+    text-align: center;
+    padding: 20px;
+
+}
+
+/* Conteneur principal */
+
 .container{
+    /* Flexbox */
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 40px;
+    padding: 20px; /* Marge intérieur */
     background-color:#fff;
-    border-radius: 10px;
+    border-radius: 10px; /* Coins arrondis */
     
+}
+
+/* Titres */
+
+h1 {
+    padding: 10px; 
 }
 
 h1, h2, h3 {
@@ -21,15 +49,16 @@ h1, h2, h3 {
     color: #333;
 }
 
-
+/* Navigation */
 
 .nav {
     background-color:coral;
     border-radius: 5px;
     width: 100%;
 
+    /* Flexbox */
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly; /* Espacement égal */
     gap: 20px;
     
 }
@@ -48,16 +77,14 @@ h1, h2, h3 {
     color: black;
 }
 
-
-/* Listes */
-
 .container ul {
+    /* Flexbox */
     display: flex;
     flex-direction: column;
     align-items: center;
 
     padding: 0;
-    list-style-type: none;
+    list-style-type: none; /* Style de la liste */
 }
 
 .container ul li {
@@ -65,22 +92,31 @@ h1, h2, h3 {
 }
 
 .container ul li a:hover {
-    color: coral;
+    color: blue;
 }
 
+/* Liste */
+
 ul {
-    list-style-type: none;
+    list-style-type: none; /* Supprime les puces */
     padding: 0;
+    margin: 0;
 }
 
 ul li {
-    padding: 8px 0;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    
 }
 
 ul li a {
     color: coral;
-    text-decoration: none;
-    font-weight: bold;
+    text-decoration: none; /* Décoration du texte */
+    font-weight: bold; /* Gras */
+    padding: 10px 15px;
 }
 
 ul li a:hover {
@@ -92,13 +128,90 @@ ul li a:hover {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse; /* Bordure collée */
     background-color:#f2f2f2;
-    box-shadow: 0 0 8px;
+    box-shadow: 0 0 8px; /* Ombre */
 }
 
 th, td {
     border: 1px solid black;
     padding: 12px;
     text-align: center;
+}
+
+/* Formulaire */
+
+form {
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    max-width: 400px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color:black;
+    color: white;
+}
+
+
+label {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 6px;
+    margin-top: 15px;
+    font-weight: 600;
+
+}
+
+input {
+    padding: 6px 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1em;
+}
+
+button {
+    max-width: 150px;
+    padding: 10px 15px;
+    background-color: aqua;
+    border: none; 
+}
+
+button:hover{
+    background-color: deepskyblue;
+}
+
+/* Texte de suppression */
+
+.supprimer {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.phraseSuppression {
+    text-align: center;
+}
+
+.retour {
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}
+/* Image */
+
+.imageBackground {
+    width: 100%;
+    height: 400px; /* Hauteur */
+    background-image: url('../img/etudiants-classe.png'); /* Arborescence de l'image */
+    background-size: cover; /* Image recouverte */
+    background-position: center; /* Image centrée */
+    background-repeat: no-repeat; /* Pas de répétition */
 }
