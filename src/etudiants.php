@@ -31,7 +31,7 @@ $etudiants = $stmt->fetchALL(PDO::FETCH_ASSOC);
             <div class="nav">
                 <a href="index.php">Accueil</a>
                 <a href="ajouter_etudiant.php">Ajouter un étudiant</a>
-                <a href="login.php">Login</a>
+                <a href="logout.php">Déconnexion</a>
             </div>
 
         <main class="imageBackground">
